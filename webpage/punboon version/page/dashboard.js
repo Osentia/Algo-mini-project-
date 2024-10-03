@@ -54,9 +54,6 @@ allProgress.forEach(item => {
 })
 
 
-
-
-
 //APEXCHART
 var options = {
     series: [{
