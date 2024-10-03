@@ -340,6 +340,7 @@ main .card .progress::before {
     background: var(--blue);
     width: 40%; /* Cannot use --var*/
 }
+
 main .card .label {
     font-size: 14px;
     font-weight: 700;
