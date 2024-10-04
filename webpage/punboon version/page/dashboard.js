@@ -33,15 +33,43 @@ imgProfile.addEventListener('click', function() {
     dropdown.classList.toggle('show');
 });
 
-window.addEventListener('click', function(e) {
-    if (e.target !== imgProfile) {
-        if (e.target.classList.contains('show')) {
-            if(dropdownProfile.classList.contains('show'))  {
-                dropdownProfile.classList.remove('show');
-            }
-        }
-    }
+
+
+
+//MENU
+const allMenu = document.querySelectorAll('main .content-data .head .menu');
+
+allMenu.forEach(item => {
+  const icon = item.querySelector('.icon');
+  const menuLink = item.querySelector('.menu-link');
+
+  icon.addEventListener('click', function() {
+    menuLink.classList.toggle('show');
+  });
 });
+
+
+
+// WINDOW CLICK EVENT
+window.addEventListener('click', function(e) {
+  if (e.target !== imgProfile && !profile.contains(e.target)) {
+      if (dropdown.classList.contains('show'))  {
+          dropdown.classList.remove('show');
+      }
+  }
+
+  allMenu.forEach(item => {
+      const icon = item.querySelector('.icon');
+      const menuLink = item.querySelector('.menu-link');
+
+      if (e.target !== icon && !menuLink.contains(e.target)) {
+          if (menuLink.classList.contains('show')) {
+              menuLink.classList.remove('show');
+          }
+      }
+  });
+});
+
 
 
 
@@ -50,7 +78,8 @@ window.addEventListener('click', function(e) {
 const allProgress = document.querySelectorAll('main .card .progress');
 
 allProgress.forEach(item => {
-  item.style.setProperty('--value', item.dataset.value);
+  const val=item.dataset.value;
+  item.style.setProperty('--value', val);
 })
 
 
