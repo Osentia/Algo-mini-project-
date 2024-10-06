@@ -1,5 +1,6 @@
 // SIDEBAR DROPDOWN
 const allDropdown = document.querySelectorAll('#sidebar .side-dropdown');
+const sidebar = document.getElementById('sidebar');
 
 allDropdown.forEach(item => {
     const a = item.parentElement.querySelector('a:first-child');
@@ -19,8 +20,92 @@ allDropdown.forEach(item => {
     });
 });
 
+// SIDEBAR COLLAPSE
+const toggleSideBar = document.querySelector('nav .toggle-sidebar');
+const allSideDivider = document.querySelectorAll('#sidebar .divider');
+
+if (sidebar.classList.contains('hide')) {
+  allSideDivider.forEach(item => {
+    item.textContent = '';
+  });
+  allDropdown.forEach(item => {
+      const a = item.parentElement.querySelector('a:first-child');
+      a.classList.remove('active');  // Example: you might want to remove active class or do something similar
+      item.classList.remove('show'); // Example: hide the dropdown items
+    })
+} else {
+  allSideDivider.forEach(item => {
+    item.textContent = item.dataset.text;
+  });
+}
+
+toggleSideBar.addEventListener('click', function() {
+  sidebar.classList.toggle('hide');
+
+  if (sidebar.classList.contains('hide')) {
+    allSideDivider.forEach(item => {
+      item.textContent = '';
+    });
+
+    // Handle dropdown items when sidebar is hidden
+    allDropdown.forEach(item => {
+      const a = item.parentElement.querySelector('a:first-child');
+      a.classList.remove('active');  // Example: you might want to remove active class or do something similar
+      item.classList.remove('show'); // Example: hide the dropdown items
+    });
+  } else {
+    // Restore text for all side dividers when sidebar is visible
+    allSideDivider.forEach(item => {
+      item.textContent = item.dataset.text;
+    });
+
+    // Optionally, you might want to show dropdown items or change styles when the sidebar is not hidden
+    allDropdown.forEach(item => {
+      const a = item.parentElement.querySelector('a:first-child');
+      a.classList.add('active');  // Example: activate the dropdown if necessary
+      item.classList.add('show'); // Example: show the dropdown items
+    });
+  }
+});
 
 
+sidebar.addEventListener('mouseleave', function() {
+  // Check if the sidebar has the class 'hide'
+  if (this.classList.contains('hide')) {
+    // Loop through all dropdown items
+    allDropdown.forEach(item => {
+      const a = item.parentElement.querySelector('a:first-child');
+      
+      // Remove the 'active' and 'show' classes
+      a.classList.remove('active');
+      item.classList.remove('show');
+    });
+
+    // Clear the text content of all side dividers
+    allSideDivider.forEach(item => {
+      item.textContent = '';
+    });
+  }
+}); // Close the 'mouseleave' event listener
+
+sidebar.addEventListener('mouseenter', function() {
+  // Check if the sidebar has the class 'hide'
+  if (this.classList.contains('hide')) {
+    // Loop through all dropdown items
+    allDropdown.forEach(item => {
+      const a = item.parentElement.querySelector('a:first-child');
+      
+      // Remove the 'active' and 'show' classes
+      a.classList.remove('active');
+      item.classList.remove('show');
+    });
+
+    // Restore the text content of all side dividers from the 'data-text' attribute
+    allSideDivider.forEach(item => {
+      item.textContent = item.dataset.text;
+    });
+  }
+});
 
 
 
@@ -81,6 +166,13 @@ allProgress.forEach(item => {
   const val=item.dataset.value;
   item.style.setProperty('--value', val);
 })
+
+
+
+
+
+
+
 
 
 //APEXCHART

@@ -13,7 +13,7 @@
         <a href="#" class="brand"><i class='bx bxs-smile icon'></i> AdminSite</a>
         <ul class="side-menu">
             <li><a href="#" class="active"><i class='bx bxs-dashboard'></i> Dashboard</a></li>
-            <li class="divider">Main</li>
+            <li class="divider" data-text="main" >Main</li>
             <li>
                 <a href="#"><i class='bx bxs-dashboard' ></i> Elements <i class='bx bx-chevron-right 
                 icon-right' ></i></a>
@@ -26,7 +26,7 @@
             </li>
             <li><a href="#"><i class='bx bxs-chart icon'></i> Charts</a></li>
             <li><a href="#"><i class='bx bxs-widget icon'></i> Widget</a></li>
-            <li class="divider">Table and forms</li>
+            <li class="divider" data-text="table and forms">Table and forms</li>
             <li><a href="#"><i class='bx bx-table icon'></i> Tables</a></li>
             <li>
                 <a href="#"><i class='bx bxs-notepad' ></i> Forms <i class='bx bx-chevron-right icon-right' 
@@ -148,41 +148,53 @@
                 <div class="chart">
                     <div id="chart"></div>
                 </div>
+            </div>
+            <div class="content-data">
+                <div class="head">
+                    <h3>Chatbox</h3>
+                    <div class="menu">
+                        <i class='bx bx-dots-horizontal-rounded icon'></i>
+                        <ul class="menu-link">
+                            <li><a href="#">Edit</a></li>
+                            <li><a href="#">Save</a></li>
+                            <li><a href="#">Remove</a></li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="chat-box">
                     <p class="day"><span>Today</span></p>
                     <div class="msg">
                         <img src="https://plus.unsplash.com/premium_photo-1661895081205-791c94434c78?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVvcGxlfGVufDB8fDB8fHww" alt="">   
                         <div class="chat">
                             <div class="profile">
-                                <span class="usersname">Tung</span>
+                                <span class="usersname">Tang</span>
                                 <span class="time">15.04</span>
                             </div>
                             <p>Hello</p>
                         </div>
                     </div>
-                </div>
-                <div class="msg me">
-                    <p class="day"><span>Today</span></p>
-                    <div class="msg">
-                        <img src="https://plus.unsplash.com/premium_photo-1661895081205-791c94434c78?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVvcGxlfGVufDB8fDB8fHww" alt="">   
-                        <div class="chat">
-                            <div class="profile">
-                                
-                                <span class="time">15.04</span>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    <div class="msg me">
+                        <p class="day"><span>Today</span></p>
+                        <div class="msg">
+                            <div class="chat">
+                                <div class="profile">
+                                    <span class="time">15.04</span>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                                 Amet cupiditate distinctio, delectus iure voluptatibus eum, dolore at natus 
                                 error quod optio nulla dignissimos, repellendus provident velit est placeat expedita veritatis.</p>
+                            </div>
                         </div>
-                    </div>
+                    </div>  
                 </div>
+                <form action="#">
+                    <div class="form-group">
+                        <input type="text" placeholder="Type...">
+                        <button type="submit" class="btn-send"><i class='bx bxs-send'></i></button>
+                    </div>
+                </form>
             </div>
-            
-            
-                
-            </div>
-        </div>
-     </main>   
+        </main>   
      <!-- MAIN --> 
     </section>
     <!-- NAVBAR -->
